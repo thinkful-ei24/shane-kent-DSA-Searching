@@ -34,7 +34,7 @@ function postOrder(tree) {
   console.log(tree.value);
 }
 
-console.log(postOrder(binarySearchTree));
+//console.log(postOrder(binarySearchTree));
 
 
 function preOrder(tree) {
@@ -53,7 +53,7 @@ function preOrder(tree) {
 
 }
 
-console.log(preOrder(binarySearchTree));
+//console.log(preOrder(binarySearchTree));
 
 const library = [
   { author: 'Cowlishaw, Mike', dewey: '005.133', title: 'The REXX Language' },
@@ -72,11 +72,12 @@ const library = [
 // Output -> Book
 
 // Find all books with the dewey
+
 // look at the subject (005)
 // look at the decimal (.133)
 // look at the title
 
-function findBook(libary, dewey, title) {
+function findBook(libary, deweyCat, deweySubCat, title) {
   const subjectBooks = [];
   libary.forEach(book => {
     if (book.dewey.split('.')[0] === dewey.split('.')[0]) {
@@ -98,4 +99,23 @@ function findBook(libary, dewey, title) {
   }
 }
 
-console.log(findBook(library, '005.133', 'Teach Yourself C++ In 21 Days'));
+//console.log(findBook(library, '005', '133', 'Teach Yourself C++ In 21 Days'));
+
+function maxProfit(arr) {
+  let min = arr[0];
+  let minInd = 0;
+  let max = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if(arr[i] < min) {
+      minInd = i;
+      min = arr[i]
+    }
+    if(arr[i] > max && i > minInd) {
+      max = arr[i]
+    }
+  }
+  console.log(min, max, `Profit is`, (Math.abs(min - max)));
+}
+
+maxProfit([128, 97, 121, 123, 98, 97, 105])
