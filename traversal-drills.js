@@ -55,17 +55,56 @@ function preOrder(tree) {
 
 //console.log(preOrder(binarySearchTree));
 
-const library = [
-  { author: 'Cowlishaw, Mike', dewey: '005.133', title: 'The REXX Language' },
-  { author: 'Sams', dewey: '005.133', title: 'Teach Yourself C++ In 21 Days' },
-  { author: 'Stroustrup., Bjarne', dewey: '005.133', title: 'The C++ Programming Language' },
-  { author: 'Crockford, Douglas', dewey: '005.2762', title: 'JavaScript: The Good Parts' },
-  { author: 'Flanagan, David', dewey: '005.2762', title: 'JavaScript: The Definitive Guide' },
-  { author: 'Schmidt, Meinhard', dewey: '005.44684', title: 'Windows Vista for Dummies' },
-  { author: 'Zondervan', dewey: '220.52081', title: 'NIV Study Bible' },
-  { author:'Humphries, Russell, Dr.', dewey: '231.7652', title: 'Starlight and Time' },
-  { author: 'Jane, Frederick Thomas', dewey: '623.82509051', title: 'Jane\'s Fighting Ships' },
-  { author: 'Norris, Chuck', dewey: '796.8092', title: 'The Official Chuck Norris Fact Book' }
+const library = [{
+    author: 'Cowlishaw, Mike',
+    dewey: '005.133',
+    title: 'The REXX Language'
+  },
+  {
+    author: 'Sams',
+    dewey: '005.133',
+    title: 'Teach Yourself C++ In 21 Days'
+  },
+  {
+    author: 'Stroustrup., Bjarne',
+    dewey: '005.133',
+    title: 'The C++ Programming Language'
+  },
+  {
+    author: 'Crockford, Douglas',
+    dewey: '005.2762',
+    title: 'JavaScript: The Good Parts'
+  },
+  {
+    author: 'Flanagan, David',
+    dewey: '005.2762',
+    title: 'JavaScript: The Definitive Guide'
+  },
+  {
+    author: 'Schmidt, Meinhard',
+    dewey: '005.44684',
+    title: 'Windows Vista for Dummies'
+  },
+  {
+    author: 'Zondervan',
+    dewey: '220.52081',
+    title: 'NIV Study Bible'
+  },
+  {
+    author: 'Humphries, Russell, Dr.',
+    dewey: '231.7652',
+    title: 'Starlight and Time'
+  },
+  {
+    author: 'Jane, Frederick Thomas',
+    dewey: '623.82509051',
+    title: 'Jane\'s Fighting Ships'
+  },
+  {
+    author: 'Norris, Chuck',
+    dewey: '796.8092',
+    title: 'The Official Chuck Norris Fact Book'
+  }
 ];
 
 // Input ->'005.133', 'Teach Yourself C++ In 21 Days'
@@ -92,7 +131,7 @@ function findBook(libary, deweyCat, deweySubCat, title) {
     }
   });
 
-  for (let i = 0; i< subCategoryBooks.length; i++) {
+  for (let i = 0; i < subCategoryBooks.length; i++) {
     if (subCategoryBooks[i].title === title) {
       return subCategoryBooks[i];
     }
@@ -107,11 +146,11 @@ function maxProfit(arr) {
   let max = 0;
 
   for (let i = 0; i < arr.length; i++) {
-    if(arr[i] < min) {
+    if (arr[i] < min) {
       minInd = i;
       min = arr[i]
     }
-    if(arr[i] > max && i > minInd) {
+    if (arr[i] > max && i > minInd) {
       max = arr[i]
     }
   }
@@ -119,3 +158,50 @@ function maxProfit(arr) {
 }
 
 maxProfit([128, 97, 121, 123, 98, 97, 105])
+
+
+
+//start floor 0 / n 10
+// if egg !broken
+// floor + 10;
+// func(floor)
+
+// else
+//n = 1
+//func(floor + 1)
+
+function eggDrop(floor, eggs) {
+  let maxFloor = 67;
+
+//   if (floor >= maxFloor) {
+
+//     if (eggs > 1) {
+//       console.log('here');
+//       floor -= 10;
+//     }
+//     eggs -= 1;
+
+    while (eggs === 2) {
+      floor += 10;
+      if(floor >= maxFloor) {
+        eggs -= 1;
+        floor -= 10;
+      }
+      // eggDrop(floor, eggs);
+    }
+
+    while (eggs === 1) {
+      floor += 1;
+      if(floor >= maxFloor) {
+        eggs -= 1;
+      }
+      // eggDrop(floor, eggs);
+    }
+//     while (eggs == 1 && floor < maxFloor) {
+//       floor = floor + 1;
+//       console.log(floor);
+//     }
+//   }
+   return floor;
+ }
+console.log(eggDrop(0, 2));
