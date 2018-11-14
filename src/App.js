@@ -11,7 +11,8 @@ class App extends Component {
       message: '',
       binaryMessage: '',
       inputValue: '',
-      binaryValue: ''
+      binaryValue: '',
+
     }
   }
 
@@ -74,7 +75,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
         <form>
-          <label>linear search</label> 
+          <label>linear search</label>
           <br></br>
           <input type="text" name="inputText" onChange={this.updateInputValue}></input>
 
@@ -83,7 +84,7 @@ class App extends Component {
         </form>
 
         <form>
-        <label>binary search</label> 
+        <label>binary search</label>
         <br></br>
         <input type="text" name="inputText" onChange={this.updateBinaryValue}></input>
 
@@ -97,3 +98,11 @@ class App extends Component {
 }
 
 export default App;
+
+
+
+
+// look for the main catagory 330 -economics
+
+// add/search for + .90 geo
+  // add/search for + .04 Europe
